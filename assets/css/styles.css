@@ -22,3 +22,29 @@ main {
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
+
+.history-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 100px;
+}
+
+.hist-btn-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hist-btn-div button {
+  width: fit-content;
+  margin: 2%;
+}
+
+#inputText {
+  padding: 1%;
+}
+
+#translatedText {
+  padding: 1%;
+}
