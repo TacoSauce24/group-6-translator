@@ -21,6 +21,38 @@ main {
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  height: 30%;
+  
+}
+
+#intro {
+  padding-top: 2px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: oblique;
+}
+
+.quote-content,p {
+  text-align: center;
+  font-size: 22px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 3px;
+}
+
+#back-click {
+margin: 5px;
+padding: 5px;
+width: 20%;
+font-size: 30px;
+box-shadow:5px 7px 6px gray ;
+}
+
+#back-click:hover {
+margin: 5px;
+padding: 5px;
+width: 20%;
+color: #fefefe;
+background-color: teal;
+
 }
 
 .history-section {
