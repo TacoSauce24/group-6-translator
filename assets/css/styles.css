@@ -55,6 +55,7 @@ background-color: teal;
 
 }
 
+/* this is the section that holds all the buttons of text that was previously translated in history */
 .history-section {
   display: flex;
   flex-direction: column;
@@ -62,21 +63,25 @@ background-color: teal;
   padding-left: 100px;
 }
 
+/* this section holds the actual buttons that are created when a person translates text and is stacked in a column */
 .hist-btn-div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* this helps the button text be able to be held in the button borders without being too big or small for the content inside, the margins help not having the buttons be too close to eachother */
 .hist-btn-div button {
   width: fit-content;
   margin: 2%;
 }
 
+/* this makes the text area for the inputed text a bit larger so that you can see the cursor in the box at the beginning of typing */
 #inputText {
   padding: 1%;
 }
 
+/* this makes the text area for the translated text a bit larger to go along with the size of the input text box. better for presentation */
 #translatedText {
   padding: 1%;
 }
