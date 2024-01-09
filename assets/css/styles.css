@@ -43,6 +43,18 @@ h1 {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 }
+.quotes {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
 /* Modal Content/Box */
 .quote-content {
@@ -62,10 +74,17 @@ h1 {
   color: white;
   font-size: 30px;
   font-family: 'Impact' ,'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  height: 40%;
+  
 }
 
 #intro {
   padding-top: 2px;
+
   font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', 'serif';
   border-bottom: solid black;
 }
@@ -113,4 +132,65 @@ h1 {
   .hist-btn-div button {
     width: 80%;
   }
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border-bottom: solid black;
+}
+
+ .bold{
+  font-weight:bold;
+}
+
+.quote-content,p {
+  text-align: center;
+  font-size: 22px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 3px;
+}
+
+#back-click {
+margin: 5px;
+padding: 5px;
+width: 20%;
+font-size: 30px;
+box-shadow:5px 7px 6px gray ;
+}
+
+#back-click:hover {
+margin: 5px;
+padding: 5px;
+width: 20%;
+color: #fefefe;
+background-color: teal;
+
+}
+
+/* this is the section that holds all the buttons of text that was previously translated in history */
+.history-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 100px;
+}
+
+/* this section holds the actual buttons that are created when a person translates text and is stacked in a column */
+.hist-btn-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* this helps the button text be able to be held in the button borders without being too big or small for the content inside, the margins help not having the buttons be too close to eachother */
+.hist-btn-div button {
+  width: fit-content;
+  margin: 2%;
+}
+
+/* this makes the text area for the inputed text a bit larger so that you can see the cursor in the box at the beginning of typing */
+#inputText {
+  padding: 1%;
+}
+
+/* this makes the text area for the translated text a bit larger to go along with the size of the input text box. better for presentation */
+#translatedText {
+  padding: 1%;
 }
