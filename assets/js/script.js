@@ -1,3 +1,4 @@
+// all of the global variables that manipulate the page the user can see by using the html
 var inputTextEl = document.getElementById('inputText');
 var languageSelectEl = document.getElementById('languageSelect');
 var translateButtonEL = document.getElementById('translateButton');
@@ -8,6 +9,7 @@ var modalCloseButtonEl = document.querySelector('.modal-close');
 var historyButtonSectionEl = document.querySelector('.hist-btn-div');
 
 
+//this funtion uses the translator api and allows the user to input text and have the api recognize what language that is and display the translation on the page based on the language the user wants to translate it to
 function getApi() {
     // fetch request gets a list of all the repos for the node.js organization
     var requestUrl = 'https://text-translator2.p.rapidapi.com/translate';
@@ -24,13 +26,16 @@ function getApi() {
             text: inputTextEl.value
         })
     }
+    //this is used to display a modal if the user hits translate without entering text to be translated
     if(!inputTextEl.value) {
         modalEl.classList.add('is-active');
         modalContentEl.textContent = "Please input text you want to translate.";
     }
+    //this is used to display a modal if the user hits translate without entering a language to translate into
     else if(!languageSelectEl.value) {
         modalEl.classList.add('is-active');
         modalContentEl.textContent = "Please select a language to translate into.";
+        //this is fetching the response to make sure there are no errors and everything is successful in fetching the data
     } else {
         fetch(requestUrl, options)
         .then(function (response) {
@@ -41,6 +46,7 @@ function getApi() {
                 modalContentEl.textContent = "Error fetching translation.";
             }
         })
+        //fetches the data and displays it on the page
         .then(function (data) {
             console.log(data);
             if(!data) {
@@ -49,6 +55,7 @@ function getApi() {
             } else {
                 translatedTextEl.textContent = data.data.translatedText;
             }
+            //catches any errors and displays a modal if there are any errors
         }) .catch(function(error){
             console.log(error);
             modalEl.classList.add('is-active');
@@ -57,6 +64,7 @@ function getApi() {
     }  
 }
 
+//this function reads items from storage
 function readItemsFromStorage() {
     var items = localStorage.getItem('items');
     if (items) {
@@ -92,6 +100,7 @@ function handleSaveItem() {
     }
 }
 
+//this function is made to make sure all these functions run when the translate button is clicked
 function handleTranslateClick() {
     getApi();
     handleSaveItem();
@@ -118,12 +127,16 @@ function getItemsFromStorage() {
     }
 }
 
+//this functions is used to make a modal disappear if the user clicks on the x 
 function closeModal() {
     modalEl.classList.remove('is-active');
 }
 
+//event that does the closemodal function when the modalCLoseButtonEl is clicked
 modalCloseButtonEl.addEventListener('click', closeModal);
 
+//event that does the handleTranslateClick function when the translate button el is clicked
 translateButtonEL.addEventListener('click', handleTranslateClick);
 
+//runs the getItems fromStorage function
 getItemsFromStorage();
