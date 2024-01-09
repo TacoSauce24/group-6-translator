@@ -6,7 +6,7 @@ const headers = {
     "X-RapidAPI-Key": "3307ce781emsh34ee5d3922618b3p108289jsn5b8f1ff3c6b4"
   };
 
-  fetch("https://famous-quotes4.p.rapidapi.com/random?=courage&count=1", {
+  fetch("https://famous-quotes4.p.rapidapi.com/random?=funny&count=1", {
     headers: headers
   })
     .then(response => response.json())
