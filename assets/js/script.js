@@ -85,14 +85,14 @@ function saveItemsToStorage(items) {
 function handleSaveItem() {
     var value = inputTextEl.value.trim();
     var items = readItemsFromStorage();
-    if(!languageSelectEl.value) {
-        modalEl.classList.add('is-active');
-        modalContentEl.textContent = "Please select a language to translate into.";
-    } else if(!inputTextEl.value) {
+    if(!inputTextEl.value) {
         modalEl.classList.add('is-active');
         modalContentEl.textContent = "Please input text you want to translate.";
         translatedTextEl.textContent = '';
         languageSelectEl.value = '';
+    } else if(!languageSelectEl.value) {
+        modalEl.classList.add('is-active');
+        modalContentEl.textContent = "Please select a language to translate into.";
     } else {
         items.push(value);
         saveItemsToStorage(items);
