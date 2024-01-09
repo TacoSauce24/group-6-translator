@@ -28,7 +28,11 @@ main {
 #intro {
   padding-top: 2px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-style: oblique;
+  border-bottom: solid black;
+}
+
+ .bolded{
+  font-weight:bold;
 }
 
 .quote-content,p {
