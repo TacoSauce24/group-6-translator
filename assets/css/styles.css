@@ -16,19 +16,28 @@ main {
 
 /* Modal Content/Box */
 .quote-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
-  height: 30%;
+  height: 40%;
   
 }
 
 #intro {
   padding-top: 2px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-style: oblique;
+  border-bottom: solid black;
+}
+
+ .bold{
+  font-weight:bold;
 }
 
 .quote-content,p {
